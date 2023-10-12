@@ -133,7 +133,7 @@ i9-13980HX CPU
 
 ![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211708602.png)
 
-![level2_encode](C:\Users\25300\Documents\Tencent Files\2530043389\FileRecv\level2_encode.gif)
+![level2_encode](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/level2_encode.gif)
 
 ### 第三关：扩展功能
 
