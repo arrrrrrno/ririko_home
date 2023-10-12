@@ -16,7 +16,8 @@
 
 ##### 1.密钥生成
 
-输入10位二进制的密钥，先与P10进行直接置换，左移一位与P8进行压缩置换得到子密钥k1；将P10置换后的密钥左移两位与P8进行压缩置换得到子密钥k2![image-20231012140948752](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012140948752.png)
+输入10位二进制的密钥，先与P10进行直接置换，左移一位与P8进行压缩置换得到子密钥k1；将P10置换后的密钥左移两位与P8进行压缩置换得到子密钥k2
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012140948752.png)
 
 
 
@@ -24,7 +25,7 @@
 
 输入8位二进制的明文，与IP进行**直接置换**
 
-![image-20231012151228815](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012151228815.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012210406953.png)
 
 ##### 3.**S-DES 函数** fk
 
@@ -32,37 +33,37 @@
 
 对右边部分进行**轮函数**F操作
 
-![image-20231012154019116](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012154019116.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012154019116.png)
 
 1.与EPBox进行**扩展置换**
 
-![image-20231012154042646](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012154042646.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012154042646.png)
 
 2.加轮密钥，与k1进行**异或**操作
 
-![image-20231012205713038](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012205713038.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012205713038.png)
 
 3.分割成左右部分，分别于替换盒SBox进行**替换**操作，得到两段2位二进制数
 
-![image-20231012205729311](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012205729311.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012205729311.png)
 
 4.拼在一起得到4位二进制数，与SP进行**直接置换**，轮函数完成
 
-![image-20231012210151358](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012210151358.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012210151358.png)
 
 得到的4位右边部分与左边部分进行**异或**操作作为左边，右边仍然用最初的右边部分
 
-![image-20231012210205455](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012210205455.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012210205455.png)
 
 这里将**左右互换**，再执行一次S-DES函数，这次的加轮密钥用k2操作。这里可以进行拓展，执行几次S-DES函数，就在密钥生成环节生成相同数量的密钥
 
-![image-20231012210230364](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012210230364.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012210230364.png)
 
 ##### 4.最终置换
 
 将左右合并，与IP^-1进行置换，注意，一串明文经过一次IP置换，马上进行IP^-1置换能够得到它自己
 
-![image-20231012210406953](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012210406953.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012210406953.png)
 
 IP^-1置换得到的就是密文
 
@@ -74,29 +75,29 @@ IP^-1置换得到的就是密文
 
 密钥扩展置换：P10与P8置换
 
-![image-20231012211022530](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012211022530.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211022530.png)
 
 初始置换盒：
 
-![image-20231012211114439](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012211114439.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211114439.png)
 
 最终置换盒：
 
-![image-20231012211129780](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012211129780.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211129780.png)
 
 轮函数F：
 
 ​	EP扩展置换
 
-![image-20231012211149885](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012211149885.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211149885.png)
 
 ​	SBox替换盒
 
-![image-20231012211233063](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012211233063.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211233063.png)
 
 SP直接置换：
 
-![image-20231012211255890](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012211255890.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211255890.png)
 
 ### 运行环境
 
@@ -116,11 +117,11 @@ i9-13980HX CPU
 
 加密：
 
-![image-20231012211607034](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012211607034.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211607034.png)
 
 解密：
 
-![image-20231012211618506](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012211618506.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211618506.png)
 
 ### 第二关：交叉测试
 
@@ -130,7 +131,7 @@ i9-13980HX CPU
 
 测试：
 
-![image-20231012211708602](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012211708602.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211708602.png)
 
 ![level2_encode](C:\Users\25300\Documents\Tencent Files\2530043389\FileRecv\level2_encode.gif)
 
@@ -140,13 +141,13 @@ i9-13980HX CPU
 
 测试：
 
-![image-20231012212055358](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012212055358.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012212055358.png)
 
 ### 第四关：暴力破解
 
 假设你找到了使用相同密钥的明、密文对(一个或多个)，请尝试使用暴力破解的方法找到正确的密钥Key。在编写程序时，你也可以考虑使用多线程的方式提升破解的效率。请设定时间戳，用视频或动图展示你在多长时间内完成了暴力破解。
 
-![image-20231012212147675](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012212147675.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012212147675.png)
 
 ### 第五关：封闭测试
 
@@ -154,9 +155,9 @@ i9-13980HX CPU
 
 测试：
 
-![image-20231012213233749](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012213233749.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012213233749.png)
 
-![image-20231012213239773](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012213239773.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012213239773.png)
 
 问题解答：
 
