@@ -6,7 +6,7 @@
 
 ### 总体流程
 
-![image-20231012210445444](C:\Users\25300\AppData\Roaming\Typora\typora-user-images\image-20231012210445444.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012210445444.png)
 
 上图是加密和解密的总体流程，下面介绍具体步骤
 
