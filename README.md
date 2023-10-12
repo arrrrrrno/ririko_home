@@ -2,6 +2,14 @@
 
 ## 1.背景介绍
 
+DES（Data Encryption Standard）是一种对称加密算法。它是在20世纪70年代初期由IBM研发的。它的设计目标是提供高度的数据安全性和性能，并且能够在各种硬件和软件平台上实现。
+DES使用56位的密钥和64位的明文块进行加密。DES算法的分组大小是64位，因此，如果需要加密的明文长度不足64位，需要进行填充；如果明文长度超过64位，则需要使用分组模式进行分组加密。
+虽然DES算法的分组大小是64位，但是由于DES算法的密钥长度只有56位，因此DES算法存在着弱点，容易受到暴力破解和差分攻击等攻击手段的威胁。因此，在实际应用中，DES算法已经不再被广泛使用，而被更加安全的算法所取代，如AES算法等。
+尽管DES已经被取代，但它在密码学的历史上仍然具有重要意义。通过DES可以帮助我们了解对称密钥加密算法的基本概念和运作原理。
+————————————————
+版权声明：本文为CSDN博主「Demonslzh」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/Demonslzh/article/details/129129493
+
 ## 2.算法流程
 
 ### 总体流程
@@ -131,7 +139,7 @@ i9-13980HX CPU
 
 测试：
 
-![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-20231012211708602.png)
+![image](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/image-2023-10-12%20230648.png)
 
 ![level2_encode](https://github.com/arrrrrrno/ririko_home/blob/master/typora-user-images/level2_encode.gif)
 
